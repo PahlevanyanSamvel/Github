@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RepositoryListViewController" customModule="Github" customModuleProvider="target">
+            <connections>
+                <outlet property="segmentedControl" destination="6Qa-kD-ZGf" id="QlQ-In-CDR"/>
+                <outlet property="tableView" destination="pqk-7p-fCN" id="Ofq-Wa-BP4"/>
+                <outlet property="view" destination="iN0-l3-epB" id="9M4-Fe-IG8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="R8N-Hh-hsk">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zD9-ct-EH8">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nrj-ex-ZZK">
+                                    <rect key="frame" x="0.0" y="99" width="393" height="1"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="5WN-g7-OvV"/>
+                                    </constraints>
+                                </view>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6Qa-kD-ZGf">
+                                    <rect key="frame" x="64" y="24" width="266" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.090196078431372548" green="0.10588235294117647" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                                    <segments>
+                                        <segment title="Last day"/>
+                                        <segment title="Last weak"/>
+                                        <segment title="Last month"/>
+                                    </segments>
+                                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="selectedSegmentTintColor" red="0.2196078431372549" green="0.42745098039215684" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="segmentedControlChange:" destination="-1" eventType="valueChanged" id="D24-SG-B4X"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="nrj-ex-ZZK" secondAttribute="trailing" id="X9Z-aG-rQj"/>
+                                <constraint firstAttribute="bottom" secondItem="nrj-ex-ZZK" secondAttribute="bottom" id="quV-sq-SaV"/>
+                                <constraint firstItem="nrj-ex-ZZK" firstAttribute="leading" secondItem="zD9-ct-EH8" secondAttribute="leading" id="xzg-Jd-tmG"/>
+                                <constraint firstAttribute="height" constant="100" id="yaF-Xp-kcg"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="100" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pqk-7p-fCN">
+                            <rect key="frame" x="0.0" y="100" width="393" height="659"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="VBJ-PE-cMt"/>
+                                <outlet property="delegate" destination="-1" id="63f-3d-EjJ"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.054901960784313725" green="0.066666666666666666" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="R8N-Hh-hsk" secondAttribute="bottom" id="9PD-PX-cwO"/>
+                <constraint firstAttribute="trailing" secondItem="R8N-Hh-hsk" secondAttribute="trailing" id="JtL-op-ZEt"/>
+                <constraint firstItem="R8N-Hh-hsk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="cod-xQ-WSh"/>
+                <constraint firstItem="R8N-Hh-hsk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="uJM-LL-gTs"/>
+            </constraints>
+            <point key="canvasLocation" x="2" y="20"/>
+        </view>
+    </objects>
+</document>
